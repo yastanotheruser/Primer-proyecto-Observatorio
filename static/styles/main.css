@@ -1,0 +1,1188 @@
+/*! HTML5 Boilerplate v7.2.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+   *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    padding-bottom: 50px;
+}
+
+.background{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    filter: blur(10px)
+}
+
+.capa{
+    width: 100%;
+    height: 100%;
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .2;
+}
+
+.background img{
+    width: 200%;
+}
+
+main{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 50px;
+    z-index: 10;
+    position: relative;
+}
+
+main h1{
+    text-align: center;
+    font-size: 40px;
+}
+
+.line{
+    width: 500px;
+    height: 2px;
+    border-style: none;
+    background: #cecece;
+    margin-top: 20px;
+}
+
+.container-comments, 
+.container-comments-request{
+    margin-top: 20px;
+}
+
+.container-comments-request{
+    margin-left: 100px;
+}
+
+.photo-perfil{
+    width: 200px;
+    height: 82px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.photo-perfil-request{
+    width: 200px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.photo-perfil-request img{
+    width: 100%;
+    height: 100%;
+}
+
+.photo-perfil img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.info-comments,
+.info-comments-request{
+    margin-left: 20px;
+    background: #e6e6e6;
+    transition: all 300ms;
+    margin-top: 10px;
+    border-bottom: 6px solid black;
+}
+
+
+.info-comments .header,
+.info-comments-request .header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: rgb(0, 0, 0);
+    color: white;
+
+}
+
+.info-comments p,
+.info-comments-request p{
+    padding: 20px;
+}
+
+.info-comments .footer,
+.info-comments-request .footer{
+    width: 100%;
+    background: white;
+    padding: 10px;
+    color: #5f5f5f;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-comments .footer h5,
+.info-comments-request .footer h5{
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.info-comments .icon-heart,
+.info-comments-request .icon-heart{
+    color: #aaaaaa;
+    transition: all 300ms;
+    font-size: 20px;
+}
+
+.info-comments .icon-heart:hover,
+.info-comments-request .icon-heart:hover{
+    color: #d91111;
+    cursor: pointer;
+}
+
+
+
+/*Contenedor para los datos de comentarios*/
+
+
+.container-data{
+    width: 100%;
+    bottom: 0px;
+    position: fixed;
+    background: white;
+    padding: 20px;
+    padding-bottom: 80px;
+    z-index: 11;
+    border-top: 6px solid rgb(0, 0, 0);
+}
+
+.photo-input{
+    display: flex;
+}
+
+
+.perfil-photo{
+    width: 100px;
+    height: 96px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.perfil-photo img{
+    width: 100%;
+    height: 100%;
+}
+
+.photo-input input{
+    width: 400px;
+    height: 40px;
+    padding: 8px;
+    background: none;
+    border-style: none;
+    outline: 0px;
+    border-bottom: 2px solid #8d8d8d;
+    margin-top: 50px;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+.mensaje{
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 300px;
+    min-height: 100px;
+    margin-top: 20px;
+    padding: 20px;
+    font-size: 16px;
+    background: #ebebeb;
+}
+
+.btn-comment{
+    position: absolute;
+    right: 20px;
+    padding: 10px 80px;
+    font-size: 16px;
+    color: white;
+    background: #019CDE;
+    border-style: none;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.btn-comment:hover{
+    opacity: 0.9;
+}
+
+.capa-data{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: black;
+    opacity: 0.8;
+    z-index: 10;
+}
+
+
+
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+   html{
+    box-sizing: border-box; /* sacado de trabajador de google, presente en todos los proyectos */
+    font-size: 62.5%; /*reset for REMS - 62.5%=10px de 16 px*/
+}
+
+*, *:before, *:after{
+    box-sizing: inherit; /* sacado de trabajador de google, presente en todos los proyectos */
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+/* Globales */
+
+nav.navegacion-principal {
+    display: none;  /* Para desaparecer el menu cuando sea en version movil */
+    width: 100%;
+  }
+  nav.navegacion-principal a {
+     font-family: 'Oswald', sans-serif;
+     color: #ffffff;
+     font-size: 1.3em;
+     text-transform: uppercase;
+     text-decoration: none; /* para remover la linea inferior */
+     transition: all .6s ease;  /* Darle efecto de resaltado cuando se coloca el mouse sobre el elemento */
+     width: 100%;
+     display: block;     /* para que se alinie en bloque, es decir hacia abajo */
+     text-align: center;
+     margin-bottom: 20px;
+     clear: both;
+  }
+  nav.navegacion-principal a:hover {
+    background-color: #fe4918; /* Para añadirle el efecto de resaltado cada vez que se pone el mouse sobre el elemento */
+  }
+  nav.navegacion-principal a:last-child {
+    border: 2px solid #fe4918;  /* para colocarle borde al ultimo elemento */
+    color: #fe4918;
+  }
+  nav.navegacion-principal a:last-child:hover {
+    color: #ffffff; 
+  }
+  @media only screen and (min-width:768px) {
+    nav.navegacion-principal {
+      width: 67%;
+      float: right;
+      text-align: right;
+      display: block;
+    }
+    nav.navegacion-principal a {
+      padding: 10px 10px;
+      display: inline-block;
+      width:auto;
+      display: inline-block;
+      text-align: center;
+      margin:0 10px 0 0;
+    }
+  }
+  div.menu-movil {
+      width: 60px;
+      display: block;
+      float: right;
+      text-align: right;
+      margin-top: 12px;
+  }
+  
+  div.menu-movil:hover {
+      cursor: pointer;  /* para que aparezca el boton de laa mano cuando se ponga el mouse sobre el elemento */
+  }
+  
+  @media only screen and (min-width: 768px) {
+      div.menu-movil {
+          display: none;
+      }
+  }
+  
+  div.menu-movil span{
+      height: 8px;
+      margin-bottom: 6px;
+      background-color: white;
+      display: block; 
+  }     
+
+img{
+    max-width: 100%; /* Vuelve todas las imagenes responsivas o adaptables */
+}
+
+.contenedor{
+    width: 95%;
+    max-width: 120rem; /*1200px*/
+    margin: 0 auto;
+}
+
+.contenedor2{
+    width: 95%;
+    max-width: 120rem; /*1200px*/
+    margin: 10px auto;
+}
+
+h1{
+    font-size: 3.8rem; /* Definir el tamaño de todos los headers desde el principio */ 
+}
+
+h2{
+    font-size: 3.4rem;  
+}
+
+h3{
+    font-size: 3rem; 
+}
+
+h4{
+    font-size: 3.6rem;    
+}
+
+.button {
+    background-color: #fe4918;
+    padding: 10px 40px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+     font-family: 'Oswald', sans-serif;
+     text-decoration: none;
+     font-size: 1em;
+     margin-top: 20px;
+     display: inline-block;
+     transition: all .3s ease;
+     border: 2px solid #fe4918;
+  }
+  .button.hollow,
+  .button.hollow:hover {
+    background-color: white;
+    color: #fe4918;
+  }
+  .button.transparente {
+    background-color: transparent;
+    border: 2px solid #ffffff;
+  }
+  .button.transparente:hover {
+    border: 2px solid #fe4918;
+  }
+  
+  ul {
+    list-style: none;
+    margin:0;
+    padding: 0;
+  }
+  .button:hover {
+    background-color: #e33000;
+  }
+
+/* Utilidades */
+.seccion {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.fw-300{
+    font-weight: 300; /* hacer mas delgada la letra */
+}
+
+.centrar-texto{
+    text-align: center;
+}
+
+.encabezado-nosotros{
+    font-weight: 300; /* hacer mas delgada la letra */
+    text-align: center;
+}
+
+.d-block{
+    display: block !important; /* para que no se sobreescriba mas abajo */
+}
+
+.contenido-centrado{
+    max-width: 800px;
+}
+
+#respond {
+    margin-top: 40px;
+  }
+  
+  #respond input[type='text'],
+  #respond input[type='email'], 
+  #respond textarea {
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+  
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    border-radius: 5px;
+  
+    line-height: 1.4em;
+  }
+
+/* botones */
+.boton{
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    display: block;
+    flex: 0 0 100%;
+    /* si se quiere dar un ancho o margin se debe modificar a display block a img y enlaces */
+}
+
+@media (min-width: 768px) {
+    .boton{
+        display: inline-block;
+        flex: 0 0 auto;
+    }
+}
+
+.boton:hover {
+    cursor: pointer; /* Forza a que aparezca una mano cuando se pose el mouse sobre el boton */
+}
+
+.boton-amarillo{
+    background-color: #000;
+}
+
+.boton-verde{
+    background-color: rgba(211, 14, 14, 0.911);
+}
+
+/*Header*/
+.site-header{  /* header de la pagina de nosotros */
+    background-color: #333333;
+    padding: 1rem, 0 3rem 0; 
+}
+
+.site-header.inicio{  /* header de la pagina de INICIO */
+    background-image: url(../img/header.jpg);
+    background-position:center center;
+    background-size:cover;
+    height: 100vh;
+    min-height: 60rem; 
+}
+
+.contenido-header{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .contenido-header{
+        text-align: left;
+    }    
+}
+
+.contenido-header h1 {
+    color: #ffffff;
+    padding-bottom: 2rem; /* ESpacio hacia dentro del elemento */
+    max-width: 60rem;  /* ancho del h1 */
+    line-height: 2; /* interlineado */    
+}
+
+.barra{
+    padding-top: 3rem; 
+}
+
+@media (min-width: 768px) {
+    .barra{
+        display: flex;
+        justify-content:space-between; /* Alinear contenido horizontalmente */
+        align-items:center;   /* Alinear contenido verticalmente */
+        
+    }    
+}
+
+/* Barra */
+div.barra {
+    background-color: #353535;
+    padding: 20px 0;
+  }
+  .fixed {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+  div.logo{
+    width: 80%; /* Toma el 80% del diseño */
+    float: left;
+  }
+  div.logo img {
+    width: 100%;
+  }
+  @media only screen and (min-width:768px) {
+    div.logo {
+      width:33%;   /* Toma el 33% en version de escritorio */
+  
+    }
+  }
+
+nav.lgo a {
+    font-family: 'Oswald', sans-serif;
+    color: #ffffff;
+    font-size: 2.3em;
+  }
+
+/* navegacion*/
+
+.navegacion a{
+    color: white;
+    text-decoration: none;
+    font-size: 2.2rem;
+    display:block;
+}
+
+@media (min-width: 768px) {
+    .navegacion a{
+        display: inline-block;
+        margin-right: 2rem;
+        font-size: 1.8rem;
+    }
+
+    .navegacion a:last-of-type{
+        margin:0;
+    }
+}
+.navegacion a:hover {
+    color: #71B100;  /* Hace que cambie de color al seleccionar un elemento*/
+}
+
+/* Movile Menu */
+.mobile-menu img{
+    width: 5rem;
+}
+
+@media (min-width: 768px) {
+    .mobile-menu{
+        display: none;
+    } 
+}
+
+.navegacion:target {
+    display: block;
+}
+
+.navegacion{
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .navegacion{
+        display: block;
+    }
+}
+
+/* Iconos nosotros */
+
+@media (min-width: 768px) {
+    .iconos-nosotros{
+        display:flex;    /* Organiza bien los iconos de forma horizontal */
+        justify-content: space-between;
+    }      	
+}
+
+.icono {
+    text-align: center;    /* centra el texto del parrafo */
+}
+
+@media (min-width: 768px) {
+    .icono {
+        flex-basis: calc(33.3% - 1rem);
+    }    
+}
+
+.icono h3 {
+    text-transform: uppercase;   /* cambia el texto de los h3 a mayusculas */
+}
+
+/* Anuncios */
+
+@media (min-width: 768px) {
+    .contenedor-anuncios {
+        display:flex;
+        justify-content: space-between; /* Genera separacion en los anuncios */
+        flex-wrap: wrap; /* para que se divida en 2 filas y no quede una sola fila con 6 elementos */
+    }    
+}
+
+.anuncio{ 
+    border: 1px solid #B5B5B5; /* borde de 1 px de color gris */
+    background-color: #f5f5f5; /* fondo color gris */
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .anuncio{
+        flex: 0 0 calc(33.3% - 1rem);  /* esta sola linea es la equivalente a las 3 de abajo */
+        /* flex-grow: 0; */
+        /* flex-shrink: 0; /* para que no se encoja */ 
+        /* flex-basis: calc(33.3% - 1rem);   /* tamano de la base un 33% del original */
+    }    
+}
+
+.contenido-anuncio {
+    padding: 2rem 2rem 2rem 2rem; /* espacio desde el borde hasta las letras de arrib der abaj izq */
+}
+.contenido-anuncio h3, 
+.contenido-anuncio p{
+    margin: 0;   /* elimina el margen de h3 y contenido anuncio */
+}
+
+.precio {
+    color: #71B100;
+    font-weight: 700;
+}
+
+/* parrafos default font-weight:400
+headings font-weight: 700 */
+
+.iconos-caracteristicas{
+    list-style: none; /* para que no se agregue vinetas */
+    padding: 0;
+    display: flex; 
+    justify-content: space-evenly;
+    flex: 1; /* para que crezca pero siempre limitado por los 500px de abajo */
+    max-width: 500px;
+}
+
+.iconos-caracteristicas li{
+    /* flex: 1; */
+    display: flex;
+}
+
+.iconos-caracteristicas li img{
+    margin-right: 2rem;
+}
+
+.ver-todas{
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 3rem;    
+}
+
+/* contacto Home */
+.imagen-contacto{
+    background-image: url(../img/encuentra.jpg); /* colocar imagen */
+    background-position: center center;
+    background-size: cover;
+    height: 40rem;
+    display:flex;
+    align-items: center;
+
+}
+
+.contenido-contacto{
+    flex: 0 0 95%; /* clase 44 */
+    color: white;
+}
+.contenido-contacto p {
+    font-size: 1.8rem; /* para el tamano de letra del parrafo p */
+}
+
+/* Seccion inferior */
+
+@media (min-width: 768px) {
+    .seccion-inferior{
+        display:flex;
+        justify-content:space-between;
+    }
+    
+    .secccion-inferior .blog{
+        flex-basis: 40%;
+    }
+    
+    .seccion-inferior .testimoniales{
+        flex-basis: calc(60% - 2rem);
+        padding-left: 2rem;
+    }    
+}
+
+.entrada-blog{
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+    .entrada-blog{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.entrada-blog:last-of-type{
+    margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+    .entrada-blog .imagen {
+        flex-basis: 40%;
+    }
+    
+    .entrada-blog .texto-entrada {
+        flex-basis: calc(60% - 3rem);
+    }
+}
+
+.texto-entrada a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.texto-entrada h4 {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.texto-entrada h4::after{
+    /* crea un pseudoelemento despues del h4*/
+    content: "";
+    display: block;
+    width: 15rem;
+    height: 0.5rem;
+    background-color: #71B100;
+    margin-top: 1rem;
+}
+
+.texto-entrada span{
+    color: #e08709;
+}
+
+/* Testimoniales */
+
+.testimonial{
+    background-color: #71B100;
+    font-size:2.4rem;
+    padding: 2rem; /* Es decir espacio hacia adentro para las letras en este caso */ 
+    color: #ffffff;
+    border-radius: 2rem;
+}
+
+.testimonial p{
+    text-align: right;
+}
+
+.testimonial blockquote::before{
+    /* before permite crear un pseudoelemento antes del elemento en cuestion */
+    content:"";
+    background-image: url(../img/comilla.svg);
+    width: 4rem;
+    height: 4rem;
+    position: absolute; 
+    left:-2rem;    
+        
+}
+
+.testimonial blockquote{
+    position: relative;  
+    padding-left: 5rem;    
+    font-weight: 300; 
+    /* se debe poner position relative en el padre y absolute en el hijo o sino toma la posicion segun la paginas */ 
+}
+
+/* footer */
+
+.site-footer{
+    background-color: #333333;
+    margin: 0;   
+}
+
+.contenedor-footer{
+    padding: 3rem 0;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .contenedor-footer{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.site-footer nav{
+    display: none; /* hace que se oculte el footer */
+}
+
+@media (min-width: 768px) {
+    .site-footer nav{
+        display: block;
+    }
+}
+
+.copyright{
+    margin:0;
+    color: #ffffff;
+}
+
+/* PAGINAS INTERNAS */
+
+/* Nosotros */
+
+@media (min-width: 768px) {
+    .contenido-nosotros{
+        display: grid; /* nuevo estandar junto a flex */
+        grid-template-columns: 50% 50%; /* se divide 50 para el texto y 50 para la imagen */
+        grid-column-gap: 5rem; /* agrega separacion entre columnas */
+    }
+}
+
+.texto-nosotros blockquote{
+    font-weight: 900;
+    font-size: 2rem;
+    margin: 0;
+    padding: 1rem;
+}
+
+/* Anuncio */
+
+.resumen-propiedad{
+    display: flex;
+    justify-content: space-between; /* alinea horizontalmente */
+    align-items: center; /* alinea verticalmente el contenido */
+
+}
+
+/* Contacto */
+
+form p{
+    font-size: 1.4rem;
+    color: #4f4f4f;
+    margin: 2rem 0 0 0;
+}
+
+legend{
+    font-size: 2rem;
+    color: #4f4f4f;
+}
+
+label{
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block; /* Todos los label van a tomar todo el espacio disponible */
+}
+
+input:not([type="submit"]),
+textarea,
+select { /* Agrega estilo a todos los input de acuerdo al type */
+    padding: 1rem;
+    display: block;
+    width: 100%; /* forzar para que mida el 100% */
+    background-color: #e1e1e1;
+    margin-bottom: 2rem;
+    border: none;
+    border-radius: 1rem;
+}
+
+select{
+    -webkit-appearance: none;
+    appearance: none;
+    /* Se debe agregar esto pues o sino no se le puede agregar padding */
+}
+
+textarea{
+    height: 20rem;
+}
+
+input[type="radio"]{
+    width: auto;
+    margin:0;
+}
+
+.forma-contacto{
+    max-width: 30rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden {
+  display: none !important;
+}
+
+/*
+* Hide only visually, but have it available for screen readers:
+* https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+*
+* 1. For long content, line feeds are not interpreted as spaces and small width
+*    causes content to wrap 1 word per line:
+*    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+*/
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+* Extends the .sr-only class to allow the element
+* to be focusable when navigated to via the keyboard:
+* https://www.drupal.org/node/897638
+*/
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+* Hide visually and from screen readers, but maintain layout
+*/
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+* Clearfix: contain floats
+*
+* For modern browsers
+* 1. The space content is one way to avoid an Opera bug when the
+*    `contenteditable` attribute is included anywhere else in the document.
+*    Otherwise it causes space to appear at the top and bottom of elements
+*    that receive the `clearfix` class.
+* 2. The use of `table` rather than `block` is only necessary if using
+*    `:before` to contain the top-margins of child elements.
+*/
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  pre {
+    white-space: pre-wrap !important;
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  /*
+     * Printing Tables:
+     * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+

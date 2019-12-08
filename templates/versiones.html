@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bienes raices</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/normalize.css') }}">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+</head>
+<body>
+		
+    <header class="site-header">
+        
+<div class="barra">
+		<div class="contenedor clearfix">
+			<div class="logo">
+				<nav class="lgo">
+					<a href="/"> <b>Kolibri</b> OS</a>
+				</nav>
+				
+			</div>
+	
+			<div class="menu-movil">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		  
+	
+			<nav class="navegacion-principal clearfix">
+				<a href="../descargar/">Descargar</a>
+				<a href="../versiones/">Versiones</a>
+				<a href="../software/">software</a>
+				<a href="../foro/">Foro</a>
+			</nav>
+		</div>
+		<!--.contenedor-->
+	</div>
+	
+    </header>
+
+    <h1 class="fw-300 centrar-texto">Versiones</h1> 
+
+    <main class="contenedor seccion contenido-centrado texto-entrada">
+        <div id="article" class="releases">
+
+		<div class="caption"><strong>Kolibri 0.7.7.0</strong> &nbsp; – &nbsp; 13/12/2009</div>
+		<table>
+		<tbody><tr>
+			<td class="description"><div style="background-position: 0 -32px;"></div>Imágen para disquete</td>
+			<td class="dwn">
+				<a href="https://archive.kolibrios.org/f/releases/kolibri_0.7.7.0_img_ru.7z" title=" MB"><img src="{{ url_for('static', filename = 'img/ru(1).png') }}" alt="ru"></a>
+				<a href="https://archive.kolibrios.org/f/releases/kolibri_0.7.7.0_img_en.7z" title="2.41 MB"><img src="{{ url_for('static', filename = 'img/en(1).png') }}" alt="en"></a>
+			</td>
+		  </tr>
+		  <tr>
+			<td class="description"><div style="background-position: 0 -64px;"></div> Imágen para disco compacto (LiveCD)</td>
+			<td class="dwn">
+				<a href="https://archive.kolibrios.org/f/releases/kolibri_0.7.7.0_iso_en.7z"><img src="{{ url_for('static', filename = 'img/ru(1).png') }}" alt="ru"></a>
+				<a href="https://archive.kolibrios.org/f/releases/kolibri_0.7.7.0_iso_en.7z" title="3.19 MB"><img src="{{ url_for('static', filename = 'img/en(1).png') }}" alt="en"></a>
+			</td>
+		  </tr>
+		  <tr>
+			<td class="description"><div style="background-position: 0 -96px;"></div>Código fuente de ésta versión</td>
+			<td class="dwn">
+				<a href="https://archive.kolibrios.org/f/releases/kolibri_0.7.7.0_src.7z" title="3.02 MB"><img src="{{ url_for('static', filename = 'img/un.png') }}" alt="un"></a>
+			</td>
+		  </tr>
+		  <tr>
+			<td class="description"><div style="background-position: 0 -128px;"></div>Kit para desarrollo de software (SDK)</td>
+			<td class="dwn"><a href="https://archive.kolibrios.org/f/releases/kolibri_0.7.7.0_sdk.7z" title="0.60 MB"><img src="{{ url_for('static', filename = 'img/un.png') }}" alt="un"></a></td>
+		  </tr>
+		</tbody></table>
+		
+		<div class="caption"><strong>Kolibri 0.7.5.0</strong> &nbsp; – &nbsp; 31/01/2009</div>
+		<table>
+		<tbody><tr>
+			<td class="description"><div style="background-position: 0 -32px;"></div>Imágen para disquete</td>
+			<td class="dwn">
+				<a href="https://archive.kolibrios.org/f/releases/kolibri_0.7.5.0_img_ru.7z" title="1.60 MB"><img src="{{ url_for('static', filename = 'img/ru(1).png') }}" alt="ru"></a>
+				<a href="https://archive.kolibrios.org/f/releases/kolibri_0.7.5.0_img_en.7z" title="1.46 MB"><img src="{{ url_for('static', filename = 'img/en(1).png') }}" alt="en"></a>
+			</td>
+		</tr>
+		<tr>
+			<td class="description"><div style="background-position: 0 -64px;"></div> Imágen para disco compacto (LiveCD)</td>
+			<td class="dwn">
+				<a href="https://archive.kolibrios.org/f/releases/kolibri_0.7.5.0_iso_ru.7z" title="3.06 MB"><img src="{{ url_for('static', filename = 'img/ru(1).png') }}" alt="ru"></a>
+				<a href="https://archive.kolibrios.org/f/releases/kolibri_0.7.5.0_iso_en.7z" title="2.93 MB"><img src="{{ url_for('static', filename = 'img/en(1).png') }}" alt="en"></a>
+			</td>
+		</tr>
+		<tr>
+			<td class="description"><div style="background-position: 0 -96px;"></div>Código fuente de ésta versión</td>
+			<td class="dwn"><a href="https://archive.kolibrios.org/f/releases/kolibri_0.7.5.0_src.7z" title="2.76 MB"><img src="{{ url_for('static', filename = 'img/un.png') }}" alt="un"></a></td>
+		</tr>
+		<tr>
+			<td class="description"><div style="background-position: 0 -128px;"></div>Kit para desarrollo de software (SDK)</td>
+			<td class="dwn"><a href="https://archive.kolibrios.org/f/releases/kolibri_0.7.5.0_sdk.7z" title="0.57 MB"><img src="{{ url_for('static', filename = 'img/un.png') }}" alt="un"></a></td>
+		</tr>
+		</tbody></table>
+
+		<div class="caption"><strong>Kolibri 0.7.1.0</strong> &nbsp; – &nbsp; 23/09/2007</div>
+		<table>
+		  <tbody><tr>
+			<td class="description"><div style="background-position: 0 -32px;"></div>Imágen para disquete</td>
+			<td class="dwn">
+				<!--
+				<a href="/f/releases/kolibri_0.7.1.0_img_ru.7z" title="1.21 MB"><img src="{{ url_for('static', filename = '/i/fl/24/ru.png') }}" alt="ru"/></a>
+				<a href="/f/releases/kolibri_0.7.1.0_img_en.7z" title="1.32 MB"><img src="{{ url_for('static', filename = '/i/fl/24/en.png') }}" alt="en"/></a>
+				-->
+				<a href="https://archive.kolibrios.org/f/releases/kolibri_0.7.1.0_imgonly_ru.7z" title="0.97 MB"><img src="{{ url_for('static', filename = 'img/ru(1).png') }}" alt="ru"></a>
+				<a href="https://archive.kolibrios.org/f/releases/kolibri_0.7.1.0_imgonly_en.7z" title="0.96 MB"><img src="{{ url_for('static', filename = 'img/en(1).png') }}" alt="en"></a>
+			</td>
+		  </tr>
+		  <tr>
+			<td class="description"><div style="background-position: 0 -96px;"></div>Código fuente de ésta versión</td>
+			<td class="dwn"><a href="https://archive.kolibrios.org/f/releases/kolibri_0.7.1.0_src.7z" title="2.15 MB"><img src="{{ url_for('static', filename = 'img/un.png') }}" alt="un"></a></td>
+		  </tr>
+		  <tr>
+			<td class="description"><div style="background-position: 0 -128px;"></div>Kit para desarrollo de software (SDK)</td>
+			<td class="dwn"><a href="https://archive.kolibrios.org/f/releases/kolibri_0.7.1.0_sdk.7z" title="0.57 MB"><img src="{{ url_for('static', filename = 'img/un.png') }}" alt="un"></a></td>
+		  </tr>
+		  <tr>
+			<td class="description"><div style="background-position: 0 -32px;"></div>Imágen de depuración para disquete</td>
+			<td class="dwn"><a href="https://archive.kolibrios.org/f/releases/kolibri_0.7.1.0_dbg.7z" title="0.43 MB"><img src="{{ url_for('static', filename = 'img/un.png') }}" alt="un"></a></td>
+		  </tr>
+		</tbody></table>
+
+		<div class="caption"><strong>Kolibri 0.7.0.0</strong> &nbsp; – &nbsp; 7/06/2007</div>
+		<table>
+		  <tbody><tr>
+			<td class="description"><div style="background-position: 0 -32px;"></div>Imágen para disquete</td>
+			<td class="dwn">
+				<!--
+				<a href="/f/releases/kolibri_0.7.0.0_img_ru.7z" title="1.51 MB"><img src="{{ url_for('static', filename = '/i/fl/24/ru.png') }}" alt="ru"/></a>
+				<a href="/f/releases/kolibri_0.7.0.0_img_en.7z" title="1.40 MB"><img src="{{ url_for('static', filename = '/i/fl/24/en.png') }}" alt="en"/></a>
+				-->
+				<a href="https://archive.kolibrios.org/f/releases/kolibri_0.7.0.0_imgonly_ru.7z" title="1.14 MB"><img src="{{ url_for('static', filename = 'img/ru(1).png') }}" alt="ru"></a>
+				<a href="https://archive.kolibrios.org/f/releases/kolibri_0.7.0.0_imgonly_en.7z" title="1.13 MB"><img src="{{ url_for('static', filename = 'img/en(1).png') }}" alt="en"></a>
+			</td>
+		  </tr>
+		  <tr>
+			<td class="description"><div style="background-position: 0 -96px;"></div>Código fuente de ésta versión</td>
+			<td class="dwn"><a href="https://archive.kolibrios.org/f/releases/kolibri_0.7.0.0_src.7z" title="2.06 MB"><img src="{{ url_for('static', filename = 'img/un.png') }}" alt="un"></a></td>
+		  </tr>
+		  <tr>
+			<td class="description"><div style="background-position: 0 -128px;"></div>Kit para desarrollo de software (SDK)</td>
+			<td class="dwn"><a href="https://archive.kolibrios.org/f/releases/kolibri_0.7.0.0_sdk.7z" title="0.25 MB"><img src="{{ url_for('static', filename = 'img/un.png') }}" alt="un"></a></td>
+		  </tr>
+		  <tr>
+			<td class="description"><div style="background-position: 0 -32px;"></div>Imágen de depuración para disquete</td>
+			<td class="dwn"><a href="https://archive.kolibrios.org/f/releases/kolibri_0.7.0.0_dbg.7z" title="0.38 MB"><img src="{{ url_for('static', filename = 'img/un.png') }}" alt="un"></a></td>
+		  </tr>
+		</tbody></table>
+
+		<div class="caption"><strong>Kolibri 0.6.5.0</strong> &nbsp; – &nbsp; 14/02/2007</div>
+		<table>
+		<tbody><tr>
+			<td class="description"><div style="background-position: 0 -32px;"></div>Imágen para disquete</td>
+			<td class="dwn">
+				<!--
+				<a href="/f/releases/kolibri_0.6.5.0_img_ru.7z" title="1.41 MB"><img src="{{ url_for('static', filename = '/i/fl/24/ru.png') }}" alt="ru"/></a>
+				<a href="/f/releases/kolibri_0.6.5.0_img_en.7z" title="1.31 MB"><img src="{{ url_for('static', filename = '/i/fl/24/en.png') }}" alt="en"/></a>
+				-->
+				<a href="https://archive.kolibrios.org/f/releases/kolibri_0.6.5.0_imgonly_ru.7z" title="1.10 MB"><img src="{{ url_for('static', filename = 'img/ru(1).png') }}" alt="ru"></a>
+				<a href="https://archive.kolibrios.org/f/releases/kolibri_0.6.5.0_imgonly_en.7z" title="1.08 MB"><img src="{{ url_for('static', filename = 'img/en(1).png') }}" alt="en"></a>
+			</td>
+		  </tr>
+		  <tr>
+			<td class="description"><div style="background-position: 0 -96px;"></div>Código fuente de ésta versión</td>
+			<td class="dwn"><a href="https://archive.kolibrios.org/f/releases/kolibri_0.6.5.0_src.7z" title="2.17 MB"><img src="{{ url_for('static', filename = 'img/un.png') }}" alt="un"></a></td>
+		  </tr>
+		  <tr>
+			<td class="description"><div style="background-position: 0 -32px;"></div>Imágen de depuración para disquete</td>
+			<td class="dwn"><a href="https://archive.kolibrios.org/f/releases/kolibri_0.6.5.0_dbg.7z" title="0.35 MB"><img src="{{ url_for('static', filename = 'img/un.png') }}" alt="un"></a></td>
+		  </tr>
+		</tbody></table>
+
+		<div class="caption"><strong>Kolibri 0.6.3.0</strong> &nbsp; – &nbsp; 31/10/2006</div>
+		<table>
+		  <tbody><tr>
+			<td class="description"><div style="background-position: 0 -32px;"></div>Imágen para disquete</td>
+			<td class="dwn">
+				<!--
+				<a href="/f/releases/kolibri_0.6.3.0_img_ru.7z" title="1.45 MB"><img src="{{ url_for('static', filename = '/i/fl/24/ru.png') }}" alt="ru"/></a>
+				<a href="/f/releases/kolibri_0.6.3.0_img_en.7z" title="1.33 MB"><img src="{{ url_for('static', filename = '/i/fl/24/en.png') }}" alt="en"/></a>
+				-->
+				<a href="https://archive.kolibrios.org/f/releases/kolibri_0.6.3.0_imgonly_ru.7z" title="1.07 MB"><img src="{{ url_for('static', filename = 'img/ru(1).png') }}" alt="ru"></a>
+				<a href="https://archive.kolibrios.org/f/releases/kolibri_0.6.3.0_imgonly_en.7z" title="1.05 MB"><img src="{{ url_for('static', filename = 'img/en(1).png') }}" alt="en"></a>
+			</td>
+		  </tr>
+		  <tr>
+			<td class="description"><div style="background-position: 0 -96px;"></div>Código fuente de ésta versión</td>
+			<td class="dwn"><a href="https://archive.kolibrios.org/f/releases/kolibri_0.6.3.0_src.7z" title="2.17 MB"><img src="{{ url_for('static', filename = 'img/un.png') }}" alt="un"></a></td>
+		  </tr>
+		</tbody></table>
+
+		<div class="caption"><strong>Kolibri 0.6.0.0</strong> &nbsp; – &nbsp; 4/09/2006</div>
+		<table>
+		  <tbody><tr>
+			<td class="description"><div style="background-position: 0 -32px;"></div>Imágen para disquete</td>
+			<td class="dwn">
+				<!--
+				<a href="/f/releases/kolibri_0.6.0.0_img_de.7z" title="1.29 MB"><img src="{{ url_for('static', filename = '/i/fl/24/de.png') }}" alt="German"/></a>
+				<a href="/f/releases/kolibri_0.6.0.0_img_ru.7z" title="1.40 MB"><img src="{{ url_for('static', filename = '/i/fl/24/ru.png') }}" alt="ru"/></a>
+				<a href="/f/releases/kolibri_0.6.0.0_img_en.7z" title="1.29 MB"><img src="{{ url_for('static', filename = '/i/fl/24/en.png') }}" alt="en"/></a>
+				-->
+				<a href="https://archive.kolibrios.org/f/releases/kolibri_0.6.0.0_imgonly_de.7z" title="1.02 MB"><img src="{{ url_for('static', filename = 'img/de(1).png') }}" alt="German"></a>
+				<a href="https://archive.kolibrios.org/f/releases/kolibri_0.6.0.0_imgonly_ru.7z" title="1.04 MB"><img src="{{ url_for('static', filename = 'img/ru(1).png') }}" alt="ru"></a>
+				<a href="https://archive.kolibrios.org/f/releases/kolibri_0.6.0.0_imgonly_en.7z" title="1.02 MB"><img src="{{ url_for('static', filename = 'img/en(1).png') }}" alt="en"></a>
+			</td>
+		  </tr>
+		  <tr>
+			<td class="description"><div style="background-position: 0 -96px;"></div>Código fuente de ésta versión</td>
+			<td class="dwn"><a href="https://archive.kolibrios.org/f/releases/kolibri_0.6.0.0_src.7z" title="2.16 MB"><img src="{{ url_for('static', filename = 'img/un.png') }}" alt="un"></a></td>
+		  </tr>
+		</tbody></table>
+
+		<div class="caption"><strong>Kolibri 0.5.8.1</strong> &nbsp; – &nbsp; 25/07/2006</div>
+		<table>
+		  <tbody><tr>
+			<td class="description"><div style="background-position: 0 -32px;"></div>Imágen para disquete</td>
+			<td class="dwn">
+				<a href="https://archive.kolibrios.org/f/releases/kolibri_0.5.8.1_img_ru.7z" title="1.45 MB"><img src="{{ url_for('static', filename = 'img/ru(1).png') }}" alt="ru"></a>
+				<a href="https://archive.kolibrios.org/f/releases/kolibri_0.5.8.1_img_en.7z" title="1.45 MB"><img src="{{ url_for('static', filename = 'img/en(1).png') }}" alt="en"></a>
+			</td>
+		  </tr>
+		  <tr>
+			<td class="description"><div style="background-position: 0 -96px;"></div>Código fuente de ésta versión</td>
+			<td class="dwn"><a href="https://archive.kolibrios.org/f/releases/kolibri_0.5.8.1_src.7z" title="2.05 MB"><img src="{{ url_for('static', filename = 'img/un.png') }}" alt="un"></a></td>
+		  </tr>
+		</tbody></table>
+
+		<div class="caption"><strong>Kolibri 0.5.8.0</strong> &nbsp; – &nbsp; 9/07/2006</div>
+		<table>
+		  <tbody><tr>
+			<td class="description"><div style="background-position: 0 -32px;"></div>Imágen para disquete</td>
+			<td class="dwn">
+				<a href="https://archive.kolibrios.org/f/releases/kolibri_0.5.8.0_img_ru.7z" title="1.09 MB"><img src="{{ url_for('static', filename = 'img/ru(1).png') }}" alt="ru"></a>
+				<a href="https://archive.kolibrios.org/f/releases/kolibri_0.5.8.0_img_en.7z" title="1.09 MB"><img src="{{ url_for('static', filename = 'img/en(1).png') }}" alt="en"></a>
+			</td>
+		  </tr>
+		  <tr>
+			<td class="description"><div style="background-position: 0 -96px;"></div>Código fuente de ésta versión</td>
+			<td class="dwn"><a href="https://archive.kolibrios.org/f/releases/kolibri_0.5.8.0_src.7z" title="2.04 MB"><img src="{{ url_for('static', filename = 'img/un.png') }}" alt="un"></a></td>
+		  </tr>
+		</tbody></table>
+
+		<div class="caption"><strong>Kolibri 0.5.3.0</strong> &nbsp; – &nbsp; 18/03/2006</div>
+		<table>
+		  <tbody><tr>
+			<td class="description"><div style="background-position: 0 -32px;"></div>Imágen para disquete</td>
+			<td class="dwn"><a href="https://archive.kolibrios.org/f/releases/kolibri_0.5.3.0_img_ru.7z" title="1.06 MB"><img src="{{ url_for('static', filename = 'img/ru(1).png') }}" alt="ru"></a></td>
+		  </tr>
+		  <tr>
+			<td class="description"><div style="background-position: 0 -96px;"></div>Código fuente de ésta versión</td>
+			<td class="dwn"><a href="https://archive.kolibrios.org/f/releases/kolibri_0.5.3.0_src.7z" title="1.68 MB"><img src="{{ url_for('static', filename = 'img/un.png') }}" alt="un"></a></td>
+		  </tr>
+		</tbody></table>
+
+		<div class="caption"><strong>Kolibri 0.4.0.0</strong> &nbsp; – &nbsp; 7/07/2005</div>
+		<table>
+		  <tbody><tr>
+			<td class="description"><div style="background-position: 0 -32px;"></div>Imágen para disquete</td>
+			<td class="dwn"><a href="https://archive.kolibrios.org/f/releases/kolibri_0.4.0.0_img_ru.zip" title="0.98 MB"><img src="{{ url_for('static', filename = 'img/ru(1).png') }}" alt="ru"></a></td>
+		  </tr>
+		  <tr>
+			<td class="description"><div style="background-position: 0 -96px;"></div>Código fuente de ésta versión</td>
+			<td class="dwn"><a href="https://archive.kolibrios.org/f/releases/kolibri_0.4.0.0_src.zip" title="2.11 MB"><img src="{{ url_for('static', filename = 'img/un.png') }}" alt="un"></a></td>
+		  </tr>
+		</tbody></table>
+
+		<div class="caption"><strong>Kolibri 0.3.2.0</strong> &nbsp; – &nbsp; 20/03/2005</div>
+		<table>
+		  <tbody><tr>
+			<td class="description"><div style="background-position: 0 -32px;"></div>Imágen para disquete</td>
+			<td class="dwn"><a href="https://archive.kolibrios.org/f/releases/kolibri_0.3.2.0_img_ru.zip" title="0.94 MB"><img src="{{ url_for('static', filename = 'img/ru(1).png') }}" alt="ru"></a></td>
+		  </tr>
+		  <tr>
+			<td class="description"><div style="background-position: 0 -96px;"></div>Código fuente de ésta versión</td>
+			<td class="dwn"><a href="https://archive.kolibrios.org/f/releases/kolibri_0.3.2.0_src.zip" title="1.73 MB"><img src="{{ url_for('static', filename = 'img/un.png') }}" alt="un"></a></td>
+		  </tr>
+		</tbody></table>
+
+		<div class="caption"><strong>Kolibri 0.2.0.0</strong> &nbsp; – &nbsp; 28/08/2004</div>
+		<table>
+		  <tbody><tr>
+			<td class="description"><div style="background-position: 0 -32px;"></div>Imágen para disquete</td>
+			<td class="dwn"><a href="https://archive.kolibrios.org/f/releases/kolibri_0.2.0.0_img_ru.zip" title="0.56 MB"><img src="{{ url_for('static', filename = 'img/ru(1).png') }}" alt="ru"></a></td>
+		  </tr>
+		  <tr>
+			<td class="description"><div style="background-position: 0 -96px;"></div>Código fuente de ésta versión</td>
+			<td class="dwn"><a href="https://archive.kolibrios.org/f/releases/kolibri_0.2.0.0_src.zip" title="0.79 MB"><img src="{{ url_for('static', filename = 'img/un.png') }}" alt="un"></a></td>
+		  </tr>
+		</tbody></table>
+
+		<div class="caption"><strong>Kolibri 0.1.0.0</strong> &nbsp; – &nbsp; 16/05/2004</div>
+		<table>
+		  <tbody><tr>
+			<td class="description"><div style="background-position: 0 -32px;"></div>Imágen para disquete</td>
+			<td class="dwn"><a href="https://archive.kolibrios.org/f/releases/kolibri_0.1.0.0_img_ru.zip" title="0.57 MB"><img src="{{ url_for('static', filename = 'img/ru(1).png') }}" alt="ru"></a></td>
+		  </tr>
+		  <tr>
+			<td class="description"><div style="background-position: 0 -96px;"></div>Código fuente de ésta versión</td>
+			<td class="dwn"><a href="https://archive.kolibrios.org/f/releases/kolibri_0.1.0.0_src.zip" title="0.67 MB"><img src="{{ url_for('static', filename = 'img/un.png') }}" alt="un"></a></td>
+		  </tr>
+		</tbody></table>
+		<br>
+
+	</div>
+        
+    </main>
+
+
+        
+</body>
+</html>

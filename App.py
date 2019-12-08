@@ -80,22 +80,83 @@ def add_contact():
         mensaje = f.read()
         f.close()
         flash(mensaje)
-        return redirect(url_for('Index'))                   
+        return redirect(url_for('get_forum'))                
 
-@app.route('/edit/<id>', methods = ['POST', 'GET'])
-def get_contact(id):
+@app.route('/edit/', methods = ['POST', 'GET'])
+def get_contact():
     """Edit the name, var1 and var2 of the points to plot
     
     :param id: id of the points to edit
     :type id: int
     :return: render_template('edit-contact.html', contact = data[0])
     :rtype: function
-    """    
+    """ 
+    id =1   
     cur = mysql.connection.cursor()
     cur.execute('SELECT * FROM contacts WHERE id={0}'.format(id))
     data = cur.fetchall()
     cur.close()
     return render_template('edit-contact.html', contact = data[0])
+
+@app.route('/descargar/', methods = ['POST', 'GET'])
+def get_download():
+    """Edit the name, var1 and var2 of the points to plot
+    
+    :param id: id of the points to edit
+    :type id: int
+    :return: render_template('edit-contact.html', contact = data[0])
+    :rtype: function
+    """ 
+    id =1   
+    cur = mysql.connection.cursor()
+    cur.execute('SELECT * FROM contacts WHERE id={0}'.format(id))
+    data = cur.fetchall()
+    cur.close()
+    return render_template('descargar.html', contact = data)
+
+@app.route('/versiones/', methods = ['POST', 'GET'])
+def get_versiones():
+    """Edit the name, var1 and var2 of the points to plot
+    
+    :param id: id of the points to edit
+    :type id: int
+    :return: render_template('edit-contact.html', contact = data[0])
+    :rtype: function
+    """ 
+    id =1   
+    cur = mysql.connection.cursor()
+    cur.execute('SELECT * FROM contacts WHERE id={0}'.format(id))
+    data = cur.fetchall()
+    cur.close()
+    return render_template('versiones.html', contact = data)
+
+@app.route('/software/', methods = ['POST', 'GET'])
+def get_software():
+    """Edit the name, var1 and var2 of the points to plot
+    
+    :param id: id of the points to edit
+    :type id: int
+    :return: render_template('edit-contact.html', contact = data[0])
+    :rtype: function
+    """ 
+    cur = mysql.connection.cursor()
+    cur.execute('SELECT * FROM contacts')
+    data = cur.fetchall()
+    return render_template('software.html', contact = data)
+
+@app.route('/foro/', methods = ['POST', 'GET'])
+def get_forum():
+    """Edit the name, var1 and var2 of the points to plot
+    
+    :param id: id of the points to edit
+    :type id: int
+    :return: render_template('edit-contact.html', contact = data[0])
+    :rtype: function
+    """ 
+    cur = mysql.connection.cursor()
+    cur.execute('SELECT * FROM contacts')
+    data = cur.fetchall()
+    return render_template('foro.html', contacts = data)
 
 @app.route('/update/<id>', methods=['POST'])
 def update_contact(id):
@@ -120,7 +181,7 @@ def update_contact(id):
         """, (name, var2, var1, id))
         flash('Contact Updated Successfully')
         mysql.connection.commit()
-        return redirect(url_for('Index'))
+        return redirect(url_for('get_forum'))
 
 @app.route('/delete/<string:id>')
 def delete_contact(id):
@@ -139,6 +200,8 @@ def delete_contact(id):
 
 @app.route('/add_file', methods=['POST'])
 def add_file():
+
+    
     """It allows to plot points by loading them from a plain text file
     
     :return: redirect

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/normalize.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+</head>
+<body>
+
+    
+    
+    
+        <header class="site-header">
+      
+                <div class="barra">
+                        <div class="contenedor clearfix">
+                            <div class="logo">
+                                <nav class="lgo">
+                                    <a href="/"> <b>Kolibri</b> OS</a>
+                                </nav>
+                                
+                            </div>
+                    
+                            <div class="menu-movil">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                          
+                    
+                            <nav class="navegacion-principal clearfix">
+                                <a href="../descargar/">Descargar</a>
+                                <a href="../versiones/">Versiones</a>
+                                <a href="../software/">software</a>
+                                <a href="../foro/">Foro</a>
+                            </nav>
+                        </div>
+                        <!--.contenedor-->
+                    </div>
+                    
+    </header>
+    <section class="contenedor">
+        <div id="respond">
+
+                <h3>Dejar un comentario</h3>
+              
+                <form action="/add_contact" method="POST" id="commentform">
+              
+                  <label for="comment_author" class="required">Tu nombre</label>
+                  <input type="text" name="name" id="comment_author" value="" tabindex="1" required="required">
+              
+                  <label for="email" class="required">Tu correo</label>
+                  <input type="email" name="var1" id="email" value="" tabindex="2" required="required">
+              
+                  <label for="comment" class="required">Tu mensaje</label>
+                  <textarea name="var2" id="var2" rows="10" tabindex="4"  required="required"></textarea>
+              
+                 
+                  <input type="hidden" name="comment_post_ID" value="1" id="comment_post_ID" />
+                  <input name="submit" type="submit" value="Enviar comentario" />
+              
+                </form>
+              
+              </div>
+</section>
+
+{% for contact in contacts %}
+<section class="contenedor">
+    
+        <div class="container-comments">
+           
+                <div class="comments">
+                   
+                  
+                    
+                    <div class="info-comments">
+                       
+                        <div class="header">
+                            <h4>{{ contact.1}}</h4>
+                            <h5>{{ contact.2}}</h5>
+                        </div>
+                        
+                        <p>{{ contact.3}}</p>
+                        
+                        <div class="footer">
+                           
+                            <h5 class="request">Responder</h5>
+                            <label class="icon-heart"></label>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+</section>
+{% endfor %}
+
+
+</body>
+</html>

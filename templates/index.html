@@ -1,785 +1,149 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Contact Flask app</title>
-    <link rel="stylesheet" href="https://bootswatch.com/4/lumen/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
-    <script type='text/javascript' src='https://code.jquery.com/jquery-1.4.4rc2.js'></script>
-    <script type='text/javascript' src="http://dygraphs.com/dygraph-combined.js"></script> 
-    <style type='text/css'></style>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
 
-    <script src="https://code.highcharts.com/stock/highstock.js"></script>
-    <script src="https://code.highcharts.com/stock/modules/data.js"></script>
-    <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/normalize.css') }}">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
 
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/data.js"></script>
-
-    
-
-   <style>
-	canvas {
-		-moz-user-select: none;
-		-webkit-user-select: none;
-		-ms-user-select: none;
-	}
-	</style>
-
+  <meta name="theme-color" content="#fafafa">
 </head>
+
 <body>
-    <div style="margin: 35px 70px 50px 90px;" class="container">
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
 
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        {% for message in messages %}
+  <!-- Add your site or application content here -->
+
+<div class="barra">
+    <div class="contenedor clearfix">
+        <div class="logo">
+            <nav class="lgo">
+                <a href="/"> <b>Kolibri</b> OS</a>
+            </nav>
             
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ message }}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-            </div>
-        {% endfor %}
-        {% endif %}
-        {% endwith %}
+        </div>
 
-        <form action="/add_contact" method="POST">
-            <input type="text" name="name" placeholder="Name" > 
-            <input type="text" name="var1" placeholder="Var1" > 
-            <input type="text" name="var2" placeholder="Var2" > 
-            <button type="submit">
-                Save
-            </button>
-        </form>
+        <div class="menu-movil">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+      
 
-        <div id ="text" ></div>
-
-        <table>
-            <thead>
-                <tr>
-                    <td>Name</td>
-                    <td>Var1</td>
-                    <td>Var2</td>
-                    <td>operaciones</td>
-                </tr>
-            </thead>
-        
-
-            <tbody>
-                {% for contact in contacts %}
-                <tr>
-                    <td>{{ contact.1}}</td>
-                    <td>{{ contact.2}}</td>          
-                    <td>{{ contact.3}}</td>
-                    <td>
-                        <a href="edit/{{contact.0}}">Edit</a>
-                        <a href="delete/{{contact.0}}">Delete</a>
-                    </td>
-                    
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>  
-
+        <nav class="navegacion-principal clearfix">
+            <a href="../descargar/">Descargar</a>
+            <a href="../versiones/">Versiones</a>
+            <a href="../software/">software</a>
+            <a href="../foro/">Foro</a>
+        </nav>
     </div>
-
-<div class ="row" style="margin: 35px 70px 50px 90px;">
-        <h1>Resultado</h1>
-        <!-- bar chart canvas element -->
-        <canvas id="myChart1" width="200" height="200"></canvas>
-        <p id="caption">The chart is displaying a simple line chart.</p>
+    <!--.contenedor-->
 </div>
 
+<section class="contenedor seccion">
+    <h2 class="fw-300 centrar-texto">Kolibri OS</h2>
+    <p>KolibriOS es un pequeño sistema operativo poderoso y rápido. Sólamente requiere unos pocos megabytes de espacio en disco y 8MB de memoria RAM para funcionar. Kolibri incluye varias aplicaciones: procesador de textos, visor de imágenes, editor gráfico, navegador web y más de 30 juegos. El soporte total para FAT12/16/32 está implementado, como también el soporte de sólo lectura para NTFS, ISO9660 y Ext2/3/4. Hay controladores escritos para las tarjetas más populares de sonido, red y video.</p>
+    <p>¿Alguna vez soñaste con un sistema que demorara menos de 10 segundos en cargar la interfaz gráfica luego del encendido, en un PC de 100 dólares? ¿Aplicaciones que inician inmediatamente luego de cliquear un icono, sin un molesto cursor con forma de reloj de arena? ¡Con KolibriOS es posible porque su núcleo y controladores están escritos enteramente en el lenguaje ensamblador FASM! Prueba Kolibri y comparalo con pesos pesados como Windows y Linux.</p>
+    <p>KolibriOS empezó en 2004 usando como base el código de MenuetOS, pero desde entonces su desarrollo es independiente. Todo nuestro código es abierto, con la mayoría del código liberado bajo la licencia GPLv2. Apreciamos mucho tus comentarios y tu ayuda es muy bienvenida.</p>
+</section>
 
-<div class="row" style="margin: 35px 70px 50px 90px;" id="graphdiv2"></div>
+<section class="contenedor seccion">
+    <h2 class="fw-300 centrar-texto">Que ofrece Kolibri OS?</h2>
+    <div class="iconos-nosotros"> 
+        <div class="icono">
+            <img src="{{ url_for('static', filename = 'img/icono1.svg') }}" alt="Icono seguridad">
+            <h3>Seguridad</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint harum magnam veniam sed velit, corporis quod eaque sit eligendi rerum voluptas, libero veritatis blanditiis vitae dolorum! Quaerat natus dignissimos temporibus.</p>
+        </div>
 
-<div class="row" style="margin: 35px 70px 50px 90px;">
-       
-    <form action="/add_file" method="POST">
-      <input type="file" id="file-input" />
-      <h3>Contenido del archivo:</h3>
-      
-      <textarea id="contenido-archivo" name="contenido-archivo" rows="10" cols="60">
-      
-      </textarea>
-      <input type="submit">
-    </form>
-  
-  </div>
+        <div class="icono">
+            <img src="{{ url_for('static', filename = 'img/icono2.svg') }}" alt="Icono mejor precio">
+            <h3>Robustez</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe corporis dolore non alias hic? Animi quam atque nesciunt autem asperiores suscipit? Perspiciatis blanditiis laudantium nesciunt numquam eaque sed consequatur ratione?</p>
+        </div>
 
-<div class='row' style="margin: 35px 70px 50px 90px;">
-    <h1>Simple Line Chart</h1>
+        <div class="icono">
+            <img src="{{ url_for('static', filename = 'img/icono3.svg') }}" alt="Icono a tiempo">
+            <h3>Velocidad</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure velit dolor quas doloremque. Odio, aut dolor, pariatur ratione in impedit debitis maxime quam tenetur natus ipsa. Dolores illo obcaecati et.</p>
+        </div>
+    </div>
+</section>
 
-    <canvas id="myChart2" width="600" height="400"></canvas>
-</div>
-        
-<script>
-    var ctx = document.getElementById('myChart1').getContext('2d');
-    var myvar2 = {{Result2|tojson|safe}};
-    var myvar = {{Result|tojson|safe}};
-    var myChart1 = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: myvar,
-            datasets: [{
-                label: '# of Votes',
-                data: myvar2,
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        }
-    });
-</script>
+<section class="contenedor seccion">
+        <h2 class="fw-300 centrar-texto">Historia</h2>
+        <p>La idea de escribir un sistema operativo completo en ensamblador es extraña pero atractiva. Sus principales ventajas son un rendimiento excepcional y una pequeña cantidad de código ejecutable. Las desventajas también son obvias: la complejidad y la estrecha vinculación con la arquitectura de la computadora. Sin embargo, los temerarios todavía se encuentran.</p>
+        <p>El proyecto más famoso de este tipo es MenuetOS y su sucursal KolibriOS, que se está desarrollando en su mayor parte en Rusia. La historia de estos sistemas operativos no está exenta de intriga y desacuerdo, y hay razones para esto: en primer lugar, el proyecto es gratuito (la licencia es la GNU GPL de la segunda versión), es decir, sus participantes trabajan no con fines de lucro, sino por la idea. En segundo lugar, decisiones como la elección de la arquitectura del procesador, debido a los detalles del proyecto, son dramáticas. El equipo de desarrollo que decidió cambiar la plataforma está condenado a procesar casi por completo el código fuente.</p>
+        <p>En comparación con otros sistemas operativos, MenuetOS es muy joven. Se ha desarrollado desde 2000 y logró hacerse famoso en los círculos de programación (por ejemplo, el artículo "Pequeño carrete, sí caro", escrito por Yakov Uvarov para "Computerra" en 2005). KolibriOS es aún más joven: se mudó de Menuet en 2004.
 
+            </p>
+        <p>Durante este tiempo, los desarrolladores lograron escribir alrededor de 7.5 MB de código en ensamblador puro. Las fuentes de Linux escritas principalmente en C tienen aproximadamente el mismo tamaño, y esto es solo el núcleo, mientras que la distribución KolibriOS incluye un shell gráfico y un pequeño conjunto de programas de aplicación (por diversión, observamos que, según estimaciones basadas en la famosa filtración de 2004, El código de Microsoft Windows 2000 tomó aproximadamente 1.5 GB).
 
-<script type="text/javascript">
-  g2 = new Dygraph(document.getElementById("graphdiv2"),
-                   {{ Graphdata|tojson|safe }},
-                   {
-                     labels: [ "x", "A", "B" ]
-                   });
-</script> 
+            </p>
+            <p>Al mismo tiempo, Hummingbird ya no es una "confirmación del concepto" y no un juguete, sino un sistema completamente funcional para el que se escriben los programas y que realmente se pueden utilizar para una serie (aunque no particularmente amplia) de tareas serias.
 
+                </p>
 
-<script>
-    function leerArchivo(e) {
-      var archivo = e.target.files[0];
-      if (!archivo) {
-        return;
-      }
-      var lector = new FileReader();
-      lector.onload = function(e) {
-        var contenido = e.target.result;
-        mostrarContenido(contenido);
-      };
-      lector.readAsText(archivo);
-    }
-    
-    function mostrarContenido(contenido) {
-      var elemento = document.getElementById('contenido-archivo');
-      elemento.innerHTML = contenido;
-    }
-    
-    document.getElementById('file-input')
-      .addEventListener('change', leerArchivo, false);
-    
-</script>
-
-
-
-<!-- ///////////////////////////// -->
-
-<script>
-        Chart.defaults.global.responsive = true;
-        var myvar2 = {{Result2|tojson|safe}};
-        var myvar = {{Result|tojson|safe}};
-        var myvar3 = {{Result3|tojson|safe}};
-         
-        // define the chart data
-        var chartData = {
-          labels : myvar,
-          datasets : [{
-              label: 'Var1',
-              fill: false,
-              lineTension: 0.1,
-              backgroundColor: "rgba(214,45,20,0.4)",
-              borderColor: "rgba(214,45,20,0.4)",
-              borderCapStyle: 'butt',
-              borderDash: [],
-              borderDashOffset: 0.0,
-              borderJoinStyle: 'miter',
-              pointBorderColor: "rgba(214,45,20,0.4)",
-              pointBackgroundColor: "#fff",
-              pointBorderWidth: 1,
-              pointHoverRadius: 5,
-              pointHoverBackgroundColor: "rgba(214,45,20,0.4)",
-              pointHoverBorderColor: "rgba(214,45,20,0.4)",
-              pointHoverBorderWidth: 2,
-              pointRadius: 1,
-              pointHitRadius: 10,
-              data : myvar2,
-              spanGaps: false
-          }, {
-              label: 'Var2',
-              fill: false,
-              lineTension: 0.1,
-              backgroundColor: "rgba(75,192,192,0.4)",
-              borderColor: "rgba(75,192,192,1)",
-              borderCapStyle: 'butt',
-              borderDash: [],
-              borderDashOffset: 0.0,
-              borderJoinStyle: 'miter',
-              pointBorderColor: "rgba(75,192,192,1)",
-              pointBackgroundColor: "#fff",
-              pointBorderWidth: 1,
-              pointHoverRadius: 5,
-              pointHoverBackgroundColor: "rgba(75,192,192,1)",
-              pointHoverBorderColor: "rgba(220,220,220,1)",
-              pointHoverBorderWidth: 2,
-              pointRadius: 1,
-              pointHitRadius: 10,
-              data : myvar3,
-              spanGaps: false
-          }]
-        }
-         
-        // get chart canvas
-        var ctx = document.getElementById("myChart2").getContext("2d");
-         
-        // create the chart using the chart canvas
-        var myChart2 = new Chart(ctx, {
-          type: 'line',
-          data: chartData,
-        });
-</script>
-
-<!-- //////////////////////////// -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<pre id="csv" style="display:none">Year,Annual mean,5 year mean
-    1880,-0.31,
-    1881,-0.22,
-    1882,-0.28,-0.29
-    1883,-0.3,-0.29
-    1884,-0.33,-0.3
-    1885,-0.32,-0.32
-    1886,-0.29,-0.32
-    1887,-0.35,-0.28
-    1888,-0.28,-0.3
-    1889,-0.18,-0.3
-    1890,-0.4,-0.3
-    1891,-0.29,-0.31
-    1892,-0.33,-0.34
-    1893,-0.34,-0.32
-    1894,-0.35,-0.3
-    1895,-0.27,-0.26
-    1896,-0.19,-0.26
-    1897,-0.16,-0.22
-    1898,-0.3,-0.19
-    1899,-0.19,-0.19
-    1900,-0.11,-0.21
-    1901,-0.18,-0.22
-    1902,-0.28,-0.25
-    1903,-0.32,-0.28
-    1904,-0.36,-0.29
-    1905,-0.27,-0.32
-    1906,-0.22,-0.33
-    1907,-0.42,-0.33
-    1908,-0.36,-0.35
-    1909,-0.37,-0.38
-    1910,-0.36,-0.36
-    1911,-0.37,-0.36
-    1912,-0.34,-0.32
-    1913,-0.34,-0.27
-    1914,-0.17,-0.25
-    1915,-0.11,-0.26
-    1916,-0.31,-0.27
-    1917,-0.39,-0.28
-    1918,-0.35,-0.3
-    1919,-0.22,-0.27
-    1920,-0.22,-0.24
-    1921,-0.16,-0.22
-    1922,-0.27,-0.22
-    1923,-0.23,-0.22
-    1924,-0.24,-0.2
-    1925,-0.19,-0.18
-    1926,-0.04,-0.16
-    1927,-0.17,-0.17
-    1928,-0.15,-0.15
-    1929,-0.29,-0.15
-    1930,-0.11,-0.14
-    1931,-0.04,-0.15
-    1932,-0.1,-0.12
-    1933,-0.22,-0.12
-    1934,-0.1,-0.13
-    1935,-0.15,-0.1
-    1936,-0.07,-0.04
-    1937,0.04,-0.02
-    1938,0.08,0.01
-    1939,-0.01,0.04
-    1940,0.02,0.04
-    1941,0.08,0.04
-    1942,0.01,0.07
-    1943,0.08,0.08
-    1944,0.18,0.05
-    1945,0.05,0.05
-    1946,-0.07,0.02
-    1947,-0.01,-0.03
-    1948,-0.05,-0.07
-    1949,-0.07,-0.07
-    1950,-0.17,-0.07
-    1951,-0.05,-0.04
-    1952,0.01,-0.05
-    1953,0.09,-0.04
-    1954,-0.11,-0.06
-    1955,-0.12,-0.05
-    1956,-0.19,-0.05
-    1957,0.08,-0.02
-    1958,0.08,0
-    1959,0.05,0.05
-    1960,-0.01,0.05
-    1961,0.07,0.04
-    1962,0.03,-0.01
-    1963,0.07,-0.03
-    1964,-0.21,-0.05
-    1965,-0.12,-0.06
-    1966,-0.03,-0.08
-    1967,0,-0.02
-    1968,-0.04,0.01
-    1969,0.08,-0.01
-    1970,0.03,-0.01
-    1971,-0.1,0.03
-    1972,0,0
-    1973,0.15,-0.01
-    1974,-0.07,-0.02
-    1975,-0.03,0.01
-    1976,-0.15,-0.02
-    1977,0.14,0.02
-    1978,0.03,0.07
-    1979,0.1,0.15
-    1980,0.2,0.14
-    1981,0.27,0.18
-    1982,0.06,0.18
-    1983,0.27,0.15
-    1984,0.1,0.13
-    1985,0.06,0.17
-    1986,0.13,0.18
-    1987,0.28,0.2
-    1988,0.33,0.26
-    1989,0.21,0.31
-    1990,0.37,0.28
-    1991,0.36,0.24
-    1992,0.13,0.25
-    1993,0.14,0.26
-    1994,0.24,0.25
-    1995,0.4,0.3
-    1996,0.31,0.39
-    1997,0.42,0.41
-    1998,0.59,0.4
-    1999,0.34,0.44
-    2000,0.36,0.47
-    2001,0.5,0.47
-    2002,0.58,0.5
-    2003,0.57,0.55
-    2004,0.49,0.56
-    2005,0.63,0.57
-    2006,0.56,0.54
-    2007,0.59,0.56
-    2008,0.44,0.56
-    2009,0.57,0.55
-    2010,0.64,0.54
-    2011,0.52,
-    2012,0.52,</pre>
+    </section>
     
 
+<main class="secccion contenedor">
+    <h2 class="fw-300 centrar-texto">Software soportado</h2>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<style>
-
-    .ld-label {
-        width:200px;
-        display: inline-block;
-    }
-
-    .ld-row {
-    }
-
-    .ld-url-input {
-        width: 500px; 
-    }
-
-    .ld-time-input {
-        width: 40px;
-    }
-
-</style>
-
-<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-
-<div class="ld-row">
-    <label class="ld-label">
-        Enable Polling
-    </label>
-    <input type="checkbox" checked="checked" id="enablePolling"/>
-</div>
-<div class="ld-row">
-    <label class="ld-label">
-        Polling Time (Seconds)
-    </label>
-    <input class="ld-time-input" type="number" value="2" id="pollingTime"/>
-</div>
-
-
-<script>
-var defaultData = 'https://demo-live-data.highcharts.com/time-data.csv';
-var urlInput = 'https://demo-live-data.highcharts.com/time-data.csv';
-var pollingCheckbox = document.getElementById('enablePolling');
-var pollingInput = document.getElementById('pollingTime');
-
-function createChart() {
-    Highcharts.chart('container', {
-        chart: {
-            type: 'spline'
-        },
-        title: {
-            text: 'Live Data'
-        },
-        data: {
-            csvURL: 'https://demo-live-data.highcharts.com/time-data.csv',
-            enablePolling: pollingCheckbox.checked === true,
-            dataRefreshRate: parseInt(pollingInput.value, 10)
-        }
-    });
-
-    if (pollingInput.value < 1 || !pollingInput.value) {
-        pollingInput.value = 1;
-    }
-}
-
-urlInput.value = 'https://demo-live-data.highcharts.com/time-data.csv';
-
-
-// We recreate instead of using chart update to make sure the loaded CSV
-// and such is completely gone.
-pollingCheckbox.onchange = urlInput.onchange = pollingInput.onchange = createChart;
-
-// Create the chart
-createChart();
-
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div id="container4" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-
-
-<script>
-    var now = new Date;
-var utc_timestamp = Date.UTC(now.getUTCFullYear(),now.getUTCMonth(), now.getUTCDate() , 
-      now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds(), now.getUTCMilliseconds());
-
-        var myvar2 = {{Result2|tojson|safe}};
-        var myvar = {{Result|tojson|safe}};
-        var myvar3 = {{Result3|tojson|safe}};
-
+    <div class="contenedor-anuncios">
         
-
-Highcharts.chart('container4', {
-    chart: {
-        type: 'spline',
-        zoomType: 'x',
-        scrollablePlotArea: {
-            minWidth: 600,
-            scrollPositionX: 1
-        }
-    },
-    title: {
-        text: '',
-        align: 'left'
-    },
-    subtitle: {
-        text: '',
-        align: 'left'
-    },
-    xAxis: {
-        type: 'datetime',
-        labels: {
-            overflow: 'justify'
-        }
-    },
-    yAxis: {
-        title: {
-            text: ''
-        },
-        minorGridLineWidth: 0,
-        gridLineWidth: 0,
-        alternateGridColor: null,
-    },
-    tooltip: {
-        valueSuffix: ''
-    },
-    plotOptions: {
-        spline: {
-            lineWidth: 4,
-            states: {
-                hover: {
-                    lineWidth: 5
-                }
-            },
-            marker: {
-                enabled: false
-            },
-            pointInterval: 3600000, // one hour
-            pointStart: Date.UTC(now.getFullYear(),now.getMonth(), now.getDate() , 
-      now.getHours(), now.getMinutes(), now.getSeconds(), now.getMilliseconds())
-        }
-    },
-    series: [{
-        name: 'Var1',
-        data: myvar2
-
-    }, {
-        name: 'Var2',
-        data: myvar3
-    }],
-    navigation: {
-        menuItemStyle: {
-            fontSize: '10px'
-        }
-    }
-});
-
-
-</script>
-
-<div id="container8" style="height: 400px; min-width: 310px"></div>
-
-
-
-
-
-<script>
-
-    var now = new Date;
-    var utc_timestamp = Date.UTC(now.getUTCFullYear(),now.getUTCMonth(), now.getUTCDate() , 
-          now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds(), now.getUTCMilliseconds());
-          var myvar2 = {{Result2|tojson|safe}};
-        var myvar = {{Result|tojson|safe}};
-        var myvar3 = {{Result3|tojson|safe}};
+        <div class="anuncio">
+            <img src="{{ url_for('static', filename = 'img/slaid6.png') }}" alt="Anuncio casa en el lago">
+            <div class="contenido-anuncio">
+                <h3>Emulador</h3>
+                <a href="#" class="boton boton-amarillo d-block">Ver entrada</a>
+            </div>
+        </div>
         
-        Highcharts.getJSON('https://cdn.jsdelivr.net/gh/highcharts/highcharts@v7.0.0/samples/data/large-dataset.json', function (data) {
-    
-            // Create a timer
-            var start = +new Date();
-        
-            // Create the chart
-            Highcharts.stockChart('container8', {
-                chart: {
-                    events: {
-                        load: function () {
-                            if (!window.TestController) {
-                                this.setTitle(null, {
-                                    text: 'Built chart in ' + (new Date() - start) + 'ms'
-                                });
-                            }
-                        }
-                    },
-                    zoomType: 'x'
-                },
-        
-                rangeSelector: {
-        
-                    buttons: [{
-                        type: 'second',
-                        count: 30,
-                        text: '30s'
-                    }, {
-                        type: 'minute',
-                        count: 5,
-                        text: '5m'
-                    }, {
-                        type: 'minute',
-                        count: 30,
-                        text: '30m'
-                    }, {
-                        type: 'hour',
-                        count: 6,
-                        text: '6h'
-                    }, {
-                        type: 'day',
-                        count: 3,
-                        text: '3d'
-                    }, {
-                        type: 'week',
-                        count: 1,
-                        text: '1w'
-                    }, {
-                        type: 'month',
-                        count: 1,
-                        text: '1m'
-                    }, {
-                        type: 'month',
-                        count: 6,
-                        text: '6m'
-                    }, {
-                        type: 'year',
-                        count: 1,
-                        text: '1y'
-                    }, {
-                        type: 'all',
-                        text: 'All'
-                    }],
-                    selected: 3
-                },
-        
-                yAxis: {
-                    title: {
-                        text: 'variables'
-                    }
-                },
-        
-                title: {
-                    text: 'Grafico'
-                },
-        
-                subtitle: {
-                    text: 'Built chart in ...' // dummy text to reserve space for dynamic subtitle
-                },
-        
-                series: [{
-                    name: 'Var1',
-                    type: 'spline',
-                    data: myvar2,
-                    pointStart: Date.UTC(now.getFullYear(),now.getMonth(), now.getDate() , 
-          now.getHours(), now.getMinutes(), now.getSeconds(), now.getMilliseconds()),
-                    pointInterval: 30000,
-                    tooltip: {
-                        valueDecimals: 1,
-                        valueSuffix: ''
-                    }
-                }, {
-                name: 'Var2',
-                type: 'spline',
-                data: myvar3,
-                pointStart: Date.UTC(now.getFullYear(),now.getMonth(), now.getDate() , 
-                now.getHours(), now.getMinutes(), now.getSeconds(), now.getMilliseconds()),
-                pointInterval: 30000,
-                tooltip: {
-                    valueDecimals: 1,
-                    valueSuffix: ''
-                }
-            }]
-        
-            });
-        });
-    
-    </script>
+        <div class="anuncio">
+            <img src="{{ url_for('static', filename = 'img/slaid5.png') }}" alt="Anuncio casa terminados de lujo">
+            <div class="contenido-anuncio">
+                <h3>Juegos</h3>
+                <a href="#" class="boton boton-amarillo d-block">Ver entrada</a>
+            </div>
+        </div>
+
+        <div class="anuncio">
+            <img src="{{ url_for('static', filename = 'img/slaid1.png') }}" alt="Anuncio casa con alberca">
+            <div class="contenido-anuncio">
+                <h3>Escritorio personal</h3>
+                <a href="#" class="boton boton-amarillo d-block">Ver entrada</a>
+            </div>
+        </div>
+    </div>
+    <div class="ver-todas">
+        <a href="#" class="boton boton-verde">Ver todo</a>
+    </div>
+</main>
 
 
 
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
 
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

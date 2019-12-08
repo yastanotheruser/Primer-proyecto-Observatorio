@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bienes raices</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/normalize.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+    
+</head>
+<body>
+
+    <header class="site-header">
+      
+<div class="barra">
+        <div class="contenedor clearfix">
+            <div class="logo">
+                <nav class="lgo">
+                    <a href="/"> <b>Kolibri</b> OS</a>
+                </nav>
+                
+            </div>
+    
+            <div class="menu-movil">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+          
+    
+            <nav class="navegacion-principal clearfix">
+                <a href="../descargar/">Descargar</a>
+                <a href="../versiones/">Versiones</a>
+                <a href="../software/">software</a>
+                <a href="../foro/">Foro</a>
+            </nav>
+        </div>
+        <!--.contenedor-->
+    </div>
+    
+    </header>
+    
+    <main class="contenedor"><!-- se debe tener una por documento, le va a decir a google que este es el contenido principal -->
+        <h2 class="fw-300 centrar-texto"> <b>Descargar Kolibri OS</b></h2> <!-- tambien debe haber un h1 por documento -->
+        
+       <!--  <div class="contenido-nosotros"> -->
+           <section class="contenedor seccion" >
+                <div id="article" class="download">
+                
+                        <table>
+                            <tbody><tr>
+                                <td><div class="icon_cell" style="background-position: 0 -32px;"></div></td>
+                                <td class="description_cell">Imágen universal para memorias flash y discos duros</td>
+                                <td class="date_cell">19 nov 2019</td>
+                                <td>
+                                    <a href="https://builds.kolibrios.org/eng/latest-distr.7z" title="rev. 7703, 27.39 MB">English</a>
+                                    <a href="https://builds.kolibrios.org/rus/latest-distr.7z" title="rev. 7703, 29.73 MB">Русский</a>
+                                    <a href="https://builds.kolibrios.org/it/latest-img.7z" title="rev. 7703, 1.23 MB">Italiano</a>
+                                    <a href="https://builds.kolibrios.org/sp/latest-img.7z" title="rev. 7703, 1.23 MB">Español</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div class="icon_cell" style="background-position: 0 -64px;"></div></td>
+                                <td class="description_cell">Imágen para CD (LiveCD)</td>
+                                <td class="date_cell">19 nov 2019</td>
+                                <td>
+                                    <a href="https://builds.kolibrios.org/eng/latest-iso.7z" title="rev. 7703, 27.09 MB">English</a>
+                                    <a href="https://builds.kolibrios.org/rus/latest-iso.7z" title="rev. 7703, 29.45 MB">Русский</a>
+                                    <a href="https://builds.kolibrios.org/it/latest-iso.7z" title="rev. 7703, 27.09 MB">Italiano</a>
+                                    <a href="https://builds.kolibrios.org/sp/latest-iso.7z" title="rev. 7703, 27.09 MB">Español</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div class="icon_cell" style="background-position: 0 -192px;"></div></td>
+                                <td class="description_cell" colspan="3">
+                                    <a href="https://archive.kolibrios.org/es/" style="padding-bottom: 1px; border-bottom: 1px dashed #ccc;
+                                    margin-left:0;">Versiones anteriores de Kolibri (0.0.0.1 - 0.7.7.0)</a>
+                                </td>
+                            </tr>
+                        </tbody></table>		
+                
+                        <p style="line-height:1.4; margin: 20px 0;">
+                                    </p>
+                
+                    </div>
+
+           </section>
+                               
+                    
+       <!--  </div> -->
+
+       <section class="contenedor seccion">
+           <div>
+               <p><b>Requisitos del sistema</b></p>
+                   <ul class="contenedor2">
+                        <li type="disc"> CPU: Intel Pentium / AMD 5x86 / Cyrix 5x86 sin MMX a 100 MHz </li>
+                        <li type="disc">RAM: 8 Mb</li>
+                        <li type="disc">Tarjeta de video: compatible con VGA (modo 640 * 480 * 16) o Vesa</li>
+                        <li type="disc">Teclado: AT</li>
+                        <li type="disc">Ratón: COM o PS / 2</li>
+                    </ul>
+                    
+           </div>
+
+           <div>
+                <p><b>Dispositivos de arranque compatibles</b></p>
+                <ul class="contenedor2">
+                    <li type="disc">IDE HDD LBA</li>
+                    <li type="disc">CD / DVD</li>
+                    <li type="disc">Flash USB</li>
+                    <p>De los idiomas disponibles son inglés, ruso, italiano y español.</p>
+                    Floppy 3.5
+                </ul>
+            </div>
+
+            <div>
+                <p><b>Instalacion</b></p>
+                <p>Al disquete:</p>
+                <ul class="contenedor2">
+                    <li type="disc">Descargar una imagen universal</li>
+                    <li type="disc">Grabar una imagen</li>
+                    <li type="disc">Flash USB</li>
+                    <p>De los idiomas disponibles son inglés, ruso, italiano y español.</p>
+                    Floppy 3.5
+                </ul>
+
+                <ul><li>Al disquete:</li>
+                </ul><ol><li>Descargar una imagen universal</li>
+                
+                <li>Grabar una imagen</li>
+                </ol><ul><li>desde debajo de Linux:</li>
+                <ul><p>dd if \u003d kolibri.img de \u003d / dev / fd0</p>
+                </ul><li>desde debajo de Windows:</li>
+                <ul><p>rawrite2 -f kolibri.img -d A</p>
+                </ul></ul><li>Al disco duro (usando GRUB o GRUB2):</li>
+                <ol><li>Descargar una imagen universal</li>
+                <li>Descomprímalo en la carpeta kolibri en la raíz del disco</li>
+                <li>Configurar el gestor de arranque</li>
+                </ol><ul><li>GRUB En menu.lst, agregue las líneas:</li>
+                <ul><span id="adtzr11"></span><!-- Yandex.RTB R-A-405566-2 --><div id="yandex_rtb_R-A-405566-2-11"></div><script type="text/javascript">    (function(w, d, n, s, t) {        w[n] = w[n] || [];        w[n].push(function() {            Ya.Context.AdvManager.render({                blockId: "R-A-405566-2",                renderTo: "yandex_rtb_R-A-405566-2-11", pageNumber: 11,                async: true            });        });        t = d.getElementsByTagName("script")[0];        s = d.createElement("script");        s.type = "text/javascript";        s.src = "//an.yandex.ru/system/context.js";        s.async = true;        t.parentNode.insertBefore(s, t);    })(this, this.document, "yandexContextAsyncCallbacks");</script><p>etiqueta KolibriOS <br>&nbsp; raíz ( <u>hd0.0</u>)<br>&nbsp; kernel / kolibri / HD_Load / memdisk <br>&nbsp; initrd /kolibri/kolibri.img</p>
+                </ul><li>GRUB2. En grub.cfg, agregue las líneas:</li>
+                <ul><p>título KolibriOS <br>&nbsp; buscar --no-floppy --fs-uuid --set \u003d root <u>Uido</u><br>&nbsp; linux16 / kolibri / HD_Load / memdisk <br>&nbsp; initrd16 /kolibri/kolibri.img</p>
+                </ul></ul><li>A una unidad flash USB:</li>
+                <ol><li>Descargar una imagen universal</li>
+                <li>Descomprímalo en cualquier carpeta</li>
+                <li>Instalar el gestor de arranque</li>
+                </ol><ul><li>desde debajo de Windows:</li>
+                <ul><li>Ejecute el archivo HD_Load \\ USB_Boot \\ inst.exe</li>
+                <li>Copie kolibri.img a la raíz de la unidad flash</li>
+                </ul><li>desde debajo de Linux:</li>
+                <ul><li>Instale GRUB2 en una tarjeta flash: grub-install <u>/ dev / sdb</u>
+                </li>
+                <li>Los siguientes pasos son similares a la instalación en un disco duro</li>
+                </ul></ul><li>Al CD:</li>
+                <ol><li>Descargar Bootable LiveCD</li>
+                <li>Lo escribimos al medio</li>
+                </ol>&nbsp; De hecho, hay muchas formas de instalar el sistema en un disco duro o unidad flash. Señalé solo los más populares y orientados al hecho de que cualquier otra distribución de Linux ya está disponible. <p>Y sí, casi se me olvida: (hd0,0), UUID y / dev / sdb son variables. Por lo tanto, debe reemplazar estos valores con los suyos. Aquí se explica cómo reconocerlos: <br><u>(hd0.0)</u>. El primer número es el número del disco duro. El segundo número es el número de partición en el disco duro deseado. La cuenta se mantiene desde 0. <br><u>Uido</u>. El identificador para la sección deseada. Puede obtenerlo con el comando ls -l / dev / disk / by-uuid en la terminal de cualquier sistema Linux. <br><u>/ dev / sdb</u>. El archivo del dispositivo en Linux. Puede reconocerlo tanto desde el administrador de archivos como desde la consola o la utilidad de diseño del disco. Tiene la forma / dev / sdX para dispositivos SATA y / dev / hdX para discos conectados al IDE.</p><span id="adtzr12"></span><!-- Yandex.RTB R-A-405566-2 --><div id="yandex_rtb_R-A-405566-2-12"></div><script type="text/javascript">    (function(w, d, n, s, t) {        w[n] = w[n] || [];        w[n].push(function() {            Ya.Context.AdvManager.render({                blockId: "R-A-405566-2",                renderTo: "yandex_rtb_R-A-405566-2-12", pageNumber: 12,                async: true            });        });        t = d.getElementsByTagName("script")[0];        s = d.createElement("script");        s.type = "text/javascript";        s.src = "//an.yandex.ru/system/context.js";        s.async = true;        t.parentNode.insertBefore(s, t);    })(this, this.document, "yandexContextAsyncCallbacks");</script><p>Espero que hayas tratado con éxito la instalación. <br>&nbsp; Si tiene alguna pregunta / problema, pregúnteles en los comentarios.</p><p>Y ahora es el momento de mirar a KolibriOS.</p>
+                
+                
+            </div>
+
+       </section>
+
+    </main> 
+    
+
+
+        
+</body>
+</html>
